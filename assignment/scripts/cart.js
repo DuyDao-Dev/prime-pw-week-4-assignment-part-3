@@ -22,11 +22,31 @@ console.log(addItem('orange'));
 
 function listItems (){
   for (let shopping of basket) {
-    console.log(shopping);
+    return shopping;
   }
 }
 
 
 function empty (){
-
+  if (basket.length > 0) {
+    basket.pop();
+  }//Does not work.
+  // basket.length = 0;//Doesn't seem to empty the original array.
+  // // basket.splice(0, basket.length); //This method and previous one don't seem to work.
+  console.log(`Basket should be empty ${basket}`);
 }
+
+
+
+//Slack assignment. What real world thing we do in function form.
+//So lets try coffee. Things mixed would be coffee, cream, sugar.
+let goodMorning = [];
+function morningDrink (ingredients) {
+  ingredients = goodMorning.push(ingredients);
+  if (goodMorning > 0) {
+    console.log(`A good morning consists of: ${goodMorning}`);
+  }
+}
+console.log(morningDrink('coffee'));
+console.log(morningDrink('cream'));
+console.log(morningDrink('sugar'));
