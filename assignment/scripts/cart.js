@@ -12,16 +12,36 @@ console.log('***** Cart Functions *****');
 
 let basket = [];
 
-function addItem (item){
-  basket.push(item);
-  console.log(`What is in the basket now? ${basket}`);
-  return true;
-}
+// function addItem (item){
+//   basket.push(item);
+//   console.log(`What is in the basket now? ${basket}`);
+//   if (true) {
+//
+//   }
+//   return true;
+// }
 addItem('orange');
 addItem('cherries');
 addItem('berries');
+addItem('tomatoes');
+addItem('lettuce');//I added tomatoes and lettuce to run line 130's function.
 
 console.log('Items added to basket: ', basket);
+
+//Trying out Garret's idea of inserting isFull function into the original addItem function.
+// function addItem (item){
+//   if(basket < maxItems){
+//   basket.push(item);
+//   return true;
+//   }//end if
+//   return false;
+// }//end function
+// addItem('orange');
+// addItem('cherries');
+// addItem('berries');
+// addItem('tomatoes');
+// addItem('lettuce');
+// console.log('Items added to basket: ', basket);
 
 // console.log("Testing what's in the basket?",basket); //Everything works but I
 // need to figure out why when I add more items in the console.log for addItem
@@ -86,11 +106,11 @@ console.log(basket);
 //Function for empty cart
 
 // Friend helped with a shortcut of emptying a cart.
-function empty (){
-  basket = [];
-}
-empty();
-console.log('Whats in the basket: ', basket);
+// function empty (){
+//   basket = [];
+// }
+// empty();
+// console.log('Whats in the basket: ', basket);
 
 //Slow Attempt (was trying to work through an idea I had while I was sleeping.)
 // function empty (){
@@ -114,20 +134,51 @@ const maxItems = 5;
 // 2. Create a function called isFull(). It should:
 //   - return `false` if the basket contains *less* than max number of items
 //   - return `true` otherwise (equal or more than maxItems)
-function isFull(addingNum){
-  if (addingNum.length == maxItems) {
-    console.log(`Whats in here? ${maxItems}`);
+// function isFull(addingMore){
+
+//Attempt 1
+//   if (addingMore.length < maxItems) {
+//     console.log(`Whats in here? ${addingMore}`);
+//     return false;
+//   }
+//   return true;
+// }
+// isFull();
+// console.log(isFull('tomatoes'));
+// console.log(isFull('lettuce'));
+
+function isFull(unit) {
+  if(unit.length >= maxItems){
     return true;
-  }
+  }//end if
   return false;
-}
-console.log(isFull(1, 2, 3, 4, 5));
+}//end funciton
+console.log(isFull(basket));//In order for this funciton to work properly, I had
+//to disable function empty on line 91-95.
+
 
 // 3. Update the required `addItem` function to:
 //   - Use the `isFull` function to prevent more than `maxItems` from being added to the basket.
 //   - If an item was added to the array, return `true`
 //   - If there was no room and the item could not be added return `false`
 //
+function addItem (item){
+  if(isFull()){
+    //cannot add anymore
+  return false;
+ }
+  else {
+    //we can add
+    basket.push(item);
+    return true;
+  }
+  console.log(`What is in the basket now? ${basket}`);
+}
+
+// reference isfull function when trying to add more items to additem function. Create a code
+// to stop ability to add more items.
+// Create a code to check const number against basket.length.
+
 // __Using Array built-in functions!__
 //
 // 4. Create a function called `removeItem`. It should:
