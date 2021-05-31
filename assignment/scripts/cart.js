@@ -12,14 +12,15 @@ console.log('***** Cart Functions *****');
 
 let basket = [];
 
-// function addItem (item){
-//   basket.push(item);
-//   console.log(`What is in the basket now? ${basket}`);
-//   if (true) {
-//
-//   }
-//   return true;
-// }
+function addItem (item){
+  basket.push(item);
+  console.log(`What is in the basket now? ${basket}`);
+  if (true) {
+
+  }
+  return true;
+}//this code is commented out to try and run Stretch goal 3. It works when non-commented
+// but the stretch goal is breaking it.
 addItem('orange');
 addItem('cherries');
 addItem('berries');
@@ -105,12 +106,13 @@ console.log(basket);
 //  - reset the `basket` to an empty array
 //Function for empty cart
 
-// Friend helped with a shortcut of emptying a cart.
-// function empty (){
-//   basket = [];
-// }
-// empty();
-// console.log('Whats in the basket: ', basket);
+// Friend helped with a shortcut of emptying a cart. Will have to comment this out if I want
+//isFull function to work.
+function empty (){
+  basket = [];
+}
+empty();
+console.log('Whats in the basket: ', basket);
 
 //Slow Attempt (was trying to work through an idea I had while I was sleeping.)
 // function empty (){
@@ -162,18 +164,18 @@ console.log(isFull(basket));//In order for this funciton to work properly, I had
 //   - If an item was added to the array, return `true`
 //   - If there was no room and the item could not be added return `false`
 //
-function addItem (item){
-  if(isFull()){
-    //cannot add anymore
-  return false;
- }
-  else {
-    //we can add
-    basket.push(item);
-    return true;
-  }
-  console.log(`What is in the basket now? ${basket}`);
-}
+// function addItem (item){
+//   if(isFull()){
+//     //cannot add anymore
+//   return false;
+//  }
+//   else {
+//     //we can add
+//     basket.push(item);
+//     return true;
+//   }
+//   console.log(`What is in the basket now? ${basket}`);
+// }
 
 // reference isfull function when trying to add more items to additem function. Create a code
 // to stop ability to add more items.
